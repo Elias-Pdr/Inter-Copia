@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pix</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            max-width: 720px;
+        }
+        .btn_main{
+            text-align: center;
+            background-color: #f5f6fa;
+            width: 190px;
+            height: 190px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #5a5a5a;
+
+        }
+        .btn_main img{
+            border-radius: 50px; 
+            margin-bottom: 8px;   
+        }
+
+        main{
+            margin: 30px 10px;
+        }
+        main button{
+            width: 100%;
+            height: 80%;
+            background: none;
+            border: none;
+            border-bottom: 2px solid #e7e7f1;
+            display: flex;
+            align-items: center;
+            color: #444444;
+            font-size: 16px;
+        }
+        button div{
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        button img{
+            margin: 0px 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; margin: 20px 10px;">
+            <img style="border-radius: 50px;" src="img/btn_voltar.png" alt="">
+            <div style="display: flex; align-items: center; justify-content: center; width: 100%; margin-left: -70px;">
+                <p><strong style="font-size: 30px;">Pix</strong></p>
+            </div>
+        </div>
+
+
+        <div style="margin: 0px 20px;">
+            <p style="color: #444444; margin-bottom: 5px;"><strong>Faça um Pix</strong></p>
+            <hr style="color: #444444; border: 1px solid #e7e7f1;">
+            <div style="margin: 30px 0px; display: flex; justify-content: center;">
+            
+                <a href="tela-pix.html" style="text-decoration: none; color: black;">
+                    <div class="btn_main">
+                        <div>
+                            <img src="img/pix_pagar.png" >
+                        </div>
+                        <div>
+                            <p>Pagar</p>
+                        </div>
+                    </div>
+                </a>
+                <div class="btn_main" style="margin: 0px 20px;">
+                    <div>
+                        <img src="img/pix_receber.png" >
+                    </div>
+                    <div>
+                        <p>Receber</p>
+                    </div>
+                </div>
+                <div class="btn_main">
+                    <div>
+                        <img src="img/pix_copiaCola.png" >
+                    </div>
+                    <div>
+                        <p>Pix copia e cola</p>
+                    </div>
+                </div>
+            
+            </div>
+            
+            <p style="color: #444444; margin-bottom: 5px;"><strong>Acesso Rápido</strong></p>
+            <hr style="color: #444444; border: 1px solid #e7e7f1;">
+        </div>
+
+    </header>
+
+    <main>
+        <button>
+            <div>
+                <img src="img/opções_pix/1.png" alt="">
+                <p>Extrato e devoluções</p>
+            </div>
+            <img style="margin-right: 20px;" src="img/opções_pix/seta.png" alt="">
+
+        </button>
+        <button>
+            <div>
+                <img src="img/opções_pix/2.png" alt="">
+                <p>Minhas chaves</p>
+            </div>
+            <img style="margin-right: 20px;" src="img/opções_pix/seta.png" alt="">
+
+        </button>
+        <button>
+            <div>
+                <img src="img/opções_pix/3.png" alt="">
+                <p>Cadastrar Chave</p>
+            </div>
+            <img style="margin-right: 20px;" src="img/opções_pix/seta.png" alt="">
+
+        </button>
+        <button>
+            <div>
+                <img src="img/opções_pix/4.png" alt="">
+                <p>Portabilidade de chave</p>
+            </div>
+            <img style="margin-right: 20px;" src="img/opções_pix/seta.png" alt="">
+
+        </button>
+        <button>
+            <div>
+                <img src="img/opções_pix/5.png" alt="">
+                <p>Pix Saque e Pix Troco</p>
+            </div>
+            <img style="margin-right: 20px;" src="img/opções_pix/seta.png" alt="">
+
+        </button>
+        <button>
+            <div>
+                <img src="img/opções_pix/6.png" alt="">
+                <p>Me ajuda</p>
+            </div>
+            <img style="margin-right: 20px;" src="img/opções_pix/seta.png" alt="">
+
+        </button>
+    </main>
+</body>
+</html>
