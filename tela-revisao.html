@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            min-width: 720px;
+            width: 100vw;
+        }
+        main, header{
+            margin: 30px auto;
+            width: 90%;
+        }
+
+        .containerSaldo{
+            border: 1px solid #cecfd6;
+            border-radius: 10px;
+            padding: 0px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 35px;
+        }
+        .letraPequena{
+            color: #444444;
+            font-size: 16px;
+
+        }
+        .letraGrande{
+            color: #383838;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 6px;
+
+        }
+        #saldo{
+            color: #444444;
+            font-size: 16px;
+        }
+        #saldo span{
+            font-weight: bold;
+        }
+
+        .containerSaldo div{
+            display: flex;
+            align-items: center;
+        }
+        .borderStyle{
+            border: 1px solid #cecfd6;
+            border-radius: 10px;
+            display: flex;
+        }
+        #containerInput{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        #containerInput input{
+            font-size: 40px;
+            font-weight: 600;
+            border: none;
+            color: #fe7c06;
+            outline: none;
+            width: 130px;
+            text-align: center;
+            font-family: 'Baloo 2', monospace;
+
+        }
+        #containerInput input::placeholder{
+            font-size: 40px;
+            font-weight: 600;
+            border: none;
+            color: #fe7c06;
+            outline: none;
+        }
+        #rs{
+            font-size: 40px;
+            font-weight: 600;
+            color: #49494b;
+            font-family: 'Baloo 2', monospace;
+
+        }
+        #containerInput > label{
+            font-size: 16px;
+            font-weight: 500;
+
+        }
+        #containerInput div{
+            padding-bottom: 2px;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; margin: 20px 0px;" onclick="window.location.href = 'tela-pix.html'">
+            <img style="border-radius: 50px;" src="img/btn_voltar.png" >
+            <div style="display: flex; align-items: center; justify-content: center; width: 100%; margin-left: -70px;">
+                <p><strong style="font-size: 30px;">Revisão</strong></p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="containerSaldo">
+            <p class="letraPequena">Saldo em conta</p>
+            <div>
+                <p id="saldo">R$ <span>90,31</span></p>
+                <img src="img/bnt_esconder_saldo2.png" alt="">
+            </div>
+        </div>
+
+        <p class="letraGrande" style="margin: 0px;">Dados do Pagamento</p>
+        <hr style="margin: 10px 0px 30px 0px; color: #444444; border: 1px solid #e7e7f1;">
+
+
+        <div id="containerInput">
+            <label>Valor a pagar</label>
+            <div>
+                <label id="rs" for="preco">R$</label>
+                <input type="number" name="preco" id="preco" placeholder="260,00">
+            </div>
+        </div>
+
+
+        <div>
+            <p class="letraPequena">---</p>
+            <p class="letraGrande">---</p>
+
+            <p class="letraPequena">Nome</p>
+            <p class="letraGrande">Ana Travor salva</p>
+
+            <p class="letraPequena">CPF/CNPJ</p>
+            <p class="letraGrande">**.876.867-**</p>
+
+            <p class="letraPequena">Instituição</p>
+            <p class="letraGrande">Picpay</p>
+
+            <p class="letraPequena">Descrição</p>
+            <p class="letraGrande">Isso não é um golpe</p>
+
+            
+            <p class="letraGrande">Pra quando?</p>
+        </div>
+
+        <hr style="margin: 10px 0px; color: #444444; border: 1px solid #e7e7f1;">
+
+        <div style="display: flex; align-items: center;">
+            <img src="img/btn_radioOn.png" alt="">
+            <p>Hoje</p>
+        </div>
+
+        <hr style="margin: 10px 0px; color: #444444; border: 1px solid #e7e7f1;">
+
+        <div style="display: flex; align-items: center;">
+            <img src="img/btn_radioOff.png" alt="">
+            <p>Agendar</p>
+        </div>
+
+    </main>
+</body>
+</html>
