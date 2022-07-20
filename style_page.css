@@ -14,9 +14,11 @@ body{
 header{
     background-color: #ffffff;
     background-image: url(img/fundo.png);
+    background-repeat: repeat-x;
+    background-size: cover;
 }
 .headerContainer, .margin{
-    width: 660px;
+    width: 90%;
     margin: auto;
 
 }
@@ -43,8 +45,8 @@ header{
 .btns_main{
     display: flex;
     flex-direction: column;
-    width: 210px;
-    height: 210px;
+    min-width: 200px;
+    min-height: 200px;
     justify-content: space-between;
     background-color: white;
 }
