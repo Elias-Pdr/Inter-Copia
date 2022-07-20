@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pix com chave</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            min-width: 720px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        main, header{
+            margin: 30px auto;
+            width: 90%;
+        }
+        main button{
+            width: 100%;
+            height: 80%;
+            background: none;
+            border: none;
+            border-bottom: 2px solid #e7e7f1;
+            color: #444444;
+            font-size: 16px;
+            padding: 10px 0px;
+
+        }
+        button div{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        button input{
+            width: 100%;
+            min-height: 74px;
+            border: none;
+            background-color: #f5f6fa;
+            border-radius: 10px;
+            outline: none;
+            padding: 0px 30px;
+            color: #444444;
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: none;
+        }
+        button img{
+            margin: 0px 10px;
+        }
+
+        footer {
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+        }
+        footer button{
+            bottom: 20px;
+            text-align: center;
+            padding: 20px 0px;
+            width: 55%;
+            border-radius: 8px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            background-color: #ff7a01;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <header>
+            <div style="display: flex; margin: 20px 10px;" onclick="window.location.href = 'tela-pix.html'">
+                <img style="border-radius: 50px;" src="img/btn_voltar.png" >
+                <div style="display: flex; align-items: center; justify-content: center; width: 100%; margin-left: -70px;">
+                    <p><strong style="font-size: 30px;">Pix com chave</strong></p>
+                </div>
+            </div>
+        </header>
+        <main>
+            <button onclick="radio('radio1'), visible('cpf')">
+                <div>
+                    <p>Chave Pix</p>
+                    <img id="radio1" style="margin-right: 20px;" src="img/btn_radioOff.png" alt="">
+                </div>
+                <input type="text" name="cpf" id="cpf" placeholder="CPF/CNPJ de quem irá receber">
+            </button>
+            <button onclick="radio('radio2'), visible('celular')">
+                <div>
+                    <p>Celular</p>
+                    <img id="radio2" style="margin-right: 20px;" src="img/btn_radioOff.png" alt="">
+                </div>
+                <input type="text" name="celular" id="celular" placeholder="Celular de quem irá receber">
+            </button>
+            <button onclick="radio('radio3'), visible('email')">
+                <div>
+                    <p>E-mail</p>
+                    <img id="radio3" style="margin-right: 20px;" src="img/btn_radioOff.png" alt="">
+                </div>
+                <input type="text" name="email" id="email" placeholder="E-mail de quem irá receber">
+            </button>
+            <button onclick="radio('radio4'), visible('aleatoria')">
+                <div>
+                    <p>Aleatória</p>
+                    <img id="radio4" style="margin-right: 20px;" src="img/btn_radioOff.png" alt="">
+                </div>
+                <input type="text" name="aleatoria" id="aleatoria" placeholder="Chave Aleatória de quem irá receber">
+            </button>
+        </main>
+    </div>
+
+    <footer>
+        <button>
+            <strong>CONTINUAR</strong>
+        </button>
+    </footer>
+
+    <script>
+        function radio(id) {
+            document.getElementById('radio1').src = "img/btn_radioOff.png"
+            document.getElementById('radio2').src = "img/btn_radioOff.png"
+            document.getElementById('radio3').src = "img/btn_radioOff.png"
+            document.getElementById('radio4').src = "img/btn_radioOff.png"
+
+            document.getElementById(id).src = "img/btn_radioOn.png"
+        }
+    
+        function visible(id) {
+            document.getElementById('cpf').style.display = 'none'
+            document.getElementById('celular').style.display = 'none'
+            document.getElementById('email').style.display = 'none'
+            document.getElementById('aleatoria').style.display = 'none'
+
+            document.getElementById(id).style.display = 'block'
+        }
+    
+    </script>
+
+</body>
+</html>
