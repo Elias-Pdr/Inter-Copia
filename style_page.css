@@ -8,14 +8,15 @@
 
 body{
     background-color: #f5f6fa;
-    max-width: 720px;
+    min-width: 720px;
 
 }
 header{
     background-color: #ffffff;
     background-image: url(img/fundo.png);
-    background-repeat: repeat-x;
-    background-size: cover;
+    background-size: contain;
+    background-position: top;
+    width: 100%;
 }
 .headerContainer, .margin{
     width: 90%;
