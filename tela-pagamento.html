@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            max-width: 720px;
+        }
+        main{
+            margin: 30px 10px;
+        }
+        main button{
+            width: 100%;
+            height: 80%;
+            background: none;
+            border: none;
+            border-bottom: 2px solid #e7e7f1;
+            display: flex;
+            align-items: center;
+            color: #444444;
+            font-size: 16px;
+        }
+        button div{
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        button img{
+            margin: 0px 10px;
+        }
+        .containerSaldo{
+            border: 1px solid #cecfd6;
+            border-radius: 10px;
+            padding: 0px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 35px;
+        }
+        .containerSaldo > p{
+            color: #444444;
+            font-size: 16px;
+
+        }
+        #saldo{
+            color: #444444;
+            font-size: 16px;
+        }
+        #saldo span{
+            font-weight: bold;
+        }
+
+        .containerSaldo div{
+            display: flex;
+            align-items: center;
+        }
+        .borderStyle{
+            border: 1px solid #cecfd6;
+            border-radius: 10px;
+            display: flex;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; margin: 20px 10px;">
+            <img style="border-radius: 50px;" src="img/btn_voltar.png" alt="">
+            <div style="display: flex; align-items: center; justify-content: center; width: 100%; margin-left: -70px;">
+                <p><strong style="font-size: 30px;">Pagar</strong></p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="containerSaldo">
+            <p>Saldo em conta</p>
+            <div>
+                <p id="saldo">R$ <span>90,31</span></p>
+                <img src="img/bnt_esconder_saldo2.png" alt="">
+            </div>
+        </div>
+
+
+
+
+
+        <button>
+            <div>
+                <img src="img/opções_pix/2.png" alt="">
+                <p>Chave Pix</p>
+            </div>
+            <img style="margin-right: 20px;" src="img/opções_pix/seta.png" alt="">
+
+        </button>
+        <button>
+            <div>
+                <img src="img/opções_pagamento/1.png" alt="">
+                <p>Ler QR Code</p>
+            </div>
+            <img style="margin-right: 20px;" src="img/opções_pix/seta.png" alt="">
+
+        </button>
+        <button>
+            <div>
+                <img src="img/opções_pagamento/2.png" alt="">
+                <p>Dados bancários</p>
+            </div>
+            <img style="margin-right: 20px;" src="img/opções_pix/seta.png" alt="">
+
+        </button>
+        <button>
+            <div>
+                <img src="img/opções_pagamento/3.png" alt="">
+                <p>Pix Copia e Cola</p>
+            </div>
+            <img style="margin-right: 20px;" src="img/opções_pix/seta.png" alt="">
+
+        </button>
+        <button>
+            <div>
+                <img src="img/opções_pagamento/4.png" alt="">
+                <p>Favoritos</p>
+            </div>
+            <img style="margin-right: 20px;" src="img/opções_pix/seta.png" alt="">
+
+        </button>
+
+
+        <div class="flex_container borderStyle" style="align-items: center; margin-top: 40px;">
+            <img  src="img/imgBabi.png" >
+            <div style="display: flex; width: 100%; justify-content: space-between;">
+                <div style="margin-left: 10px;">
+                    <p style="margin-bottom: 5px;"><strong>Precisa de ajuda?</strong></p>
+                    <p style="color: #6e6d72;">Converse com a gente pelo chat, A Babi vai te ajudar</p>
+                </div>
+                <img style="margin-right: 30px;" src="img/btn_setaRigth.png">
+            </div>
+        </div>
+
+
+
+    </main>
+</body>
+</html>
