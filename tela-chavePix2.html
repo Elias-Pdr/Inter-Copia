@@ -32,17 +32,18 @@
             justify-content: space-between;
             margin-bottom: 35px;
         }
-        .containerSaldo > p{
-            color: #444444;
-            font-size: 16px;
+        .letraPequena{
+            color: #616161;
+            font-size: 18px;
 
         }
-        #saldo{
+        .letraGrande{
             color: #444444;
-            font-size: 16px;
-        }
-        #saldo span{
+            font-size: 18px;
             font-weight: bold;
+            margin-bottom: 30px;
+            margin-top: 6px;
+
         }
 
         .containerSaldo div{
@@ -66,35 +67,51 @@
             border: none;
             color: #fe7c06;
             outline: none;
-            width: 130px;
+            width: 150px;
             text-align: center;
             font-family: 'Baloo 2', monospace;
 
         }
         #containerInput input::placeholder{
-            font-size: 40px;
+            font-size: 45px;
             font-weight: 600;
             border: none;
             color: #fe7c06;
             outline: none;
         }
         #rs{
-            font-size: 40px;
-            font-weight: 600;
+            font-size: 45px;
+            font-weight: 500;
             color: #49494b;
             font-family: 'Baloo 2', monospace;
 
         }
-        #containerInput > label{
-            font-size: 16px;
-            font-weight: 500;
 
-        }
         #containerInput div{
             padding-bottom: 2px;
             border-bottom: 1px solid rgb(184, 184, 184);
             width: fit-content;
         }
+        .border{
+            padding: 20px;
+            border: 1px solid #cecfd6;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+
+
+
+        #saldo{
+            color: #444444;
+            font-size: 16px;
+        }
+        #saldo span{
+            font-weight: bold;
+        }
+
+
+ 
 
 
         #descicaoContainer{
@@ -106,9 +123,14 @@
             border: none;
             padding: 16px;
             border-radius: 10px;
-            background-color: #dadada;
+            background-color: #f5f6fa;
             outline: none;
+            font-size: 18px;
         }
+        #descicaoContainer input::placeholder{
+            color: #98979c;
+        }
+
 
         footer {
             text-align: center;
@@ -144,13 +166,12 @@
     <main>
 
         <div class="containerSaldo">
-            <p>Saldo em conta</p>
+            <p class="letraPequena">Saldo em conta</p>
             <div>
-                <p id="saldo">R$ <span>90,31</span></p>
+                <p id="saldo"><span class="letraPequena">R$</span> <span class="letraGrande">90,31</span></p>
                 <img src="img/bnt_esconder_saldo2.png" alt="">
             </div>
         </div>
-
 
         <div id="containerInput">
             <label>Valor a pagar</label>
@@ -161,7 +182,7 @@
         </div>
 
         <div id="descicaoContainer">
-            <p><strong>Descrição (opcional)</strong></p>
+            <p><strong style="color: #ff8700;">Descrição (opcional)</strong></p>
             <input type="text" name="descicao" id="descicao" placeholder="Pagamento">
         </div>
 
