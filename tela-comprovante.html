@@ -5,8 +5,161 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprovante</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            min-width: 720px;
+            width: 100vw;
+        }
+        main, header{
+            margin: 30px auto;
+            width: 90%;
+        }
+
+        header div{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        header img{
+            margin: 10px 0px;
+        }
+
+
+        .letraPequena{
+            color: #616161;
+            font-size: 18px;
+
+        }
+        .letraGrande{
+            color: #444444;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            margin-top: 6px;
+
+        }
+
+
+
+
+        .rs{
+            font-size: 45px;
+            font-weight: 500;
+            color: #49494b;
+            font-family: 'Baloo 2', monospace;
+
+        }
+
+
+
+        footer {
+            text-align: center;
+            width: 100%;
+            margin: 40px 0px;
+
+        }
+        footer button{
+            bottom: 20px;
+            text-align: center;
+            padding: 20px 0px;
+            width: 50%;
+            border-radius: 8px;
+            border: 2px solid #ff7a01;
+            color: white;
+            font-size: 16px;
+            background-color: #ff7a01;
+            margin: 10px 0px;
+        }
+        #home{
+            background-color: transparent;
+            color: #444444;
+            border: 2px solid #ff7a01;
+
+        }
+
+
+
+    </style>
+
 </head>
 <body>
-    
+
+    <header>
+        <div>
+            <img src="img/recibo.png" alt="">
+            <p class="letraGrande" style="margin: 0px;">Pix Realizado</p>
+            <p class="letraGrande rs" style="margin: 0px;">R$ 250,00</p>
+        </div>
+    </header>
+
+    <main>
+        <div>
+            <p class="letraPequena">ID da transação</p>
+            <p class="letraGrande">E0928639498663uiyygyYGuygwe7</p>
+
+            <p class="letraPequena">Data do pagamento</p>
+            <p class="letraGrande">18/07/2022</p>
+
+            <p class="letraPequena">Horário</p>
+            <p class="letraGrande">23:21</p>
+            
+            <p class="letraPequena">Descrição</p>
+            <p class="letraGrande">Isso não é um golpe</p>
+        
+
+
+
+            <p class="letraGrande" style="margin: 40px 0px 8px 0px;">Dados de quem recebeu</p>
+            <hr style="margin: 0px 0px 20px 0px; background-color: #e8e7ed; border: none; height: 2px;">
+
+
+
+
+            <p class="letraPequena">Nome</p>
+            <p class="letraGrande">Ana Travor salva</p>
+
+            <p class="letraPequena">CPF/CNPJ</p>
+            <p class="letraGrande">**.876.867-**</p>
+
+            <p class="letraPequena">Instituição</p>
+            <p class="letraGrande">Picpay</p>
+
+
+            
+            <p class="letraGrande" style="margin: 40px 0px 8px 0px;">Dados de quem pagou</p>
+            <hr style="margin: 0px 0px 20px 0px; background-color: #e8e7ed; border: none; height: 2px;">
+
+
+
+            <p class="letraPequena">Nome</p>
+            <p class="letraGrande">Ana Travor salva</p>
+
+            <p class="letraPequena">CPF/CNPJ</p>
+            <p class="letraGrande">**.876.867-**</p>
+
+            <p class="letraPequena">Instituição</p>
+            <p class="letraGrande">Picpay</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <button onclick="document.getElementById('containeriSafe').style.display = 'flex'">
+            <strong>COMPARTILHAR</strong>
+        </button>
+
+        <button id="home" onclick="document.getElementById('containeriSafe').style.display = 'flex'">
+            <strong>HOME DO PIX</strong>
+        </button>
+    </footer>
+
 </body>
 </html>
