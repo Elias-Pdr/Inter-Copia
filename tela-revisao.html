@@ -33,24 +33,17 @@
             margin-bottom: 35px;
         }
         .letraPequena{
-            color: #444444;
+            color: #616161;
             font-size: 18px;
 
         }
         .letraGrande{
-            color: #383838;
+            color: #444444;
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 30px;
             margin-top: 6px;
 
-        }
-        #saldo{
-            color: #444444;
-            font-size: 16px;
-        }
-        #saldo span{
-            font-weight: bold;
         }
 
         .containerSaldo div{
@@ -93,11 +86,7 @@
             font-family: 'Baloo 2', monospace;
 
         }
-        #containerInput > label{
-            font-size: 16px;
-            font-weight: 500;
 
-        }
         #containerInput div{
             padding-bottom: 2px;
             width: fit-content;
@@ -183,7 +172,7 @@
 
 
     <header>
-        <div style="display: flex; margin: 20px 0px;" onclick="window.location.href = 'tela-pix.html'">
+        <div style="display: flex; margin: 20px 0px;" onclick="window.location.href = 'tela-chavePix2.html'">
             <img style="border-radius: 50px;" src="img/btn_voltar.png" >
             <div style="display: flex; align-items: center; justify-content: center; width: 100%; margin-left: -70px;">
                 <p><strong style="font-size: 30px;">Revisão</strong></p>
@@ -196,7 +185,7 @@
         <div class="containerSaldo">
             <p class="letraPequena">Saldo em conta</p>
             <div>
-                <p id="saldo">R$ <span>90,31</span></p>
+                <p id="saldo"><span class="letraPequena">R$</span> <span class="letraGrande">90,31</span></p>
                 <img src="img/bnt_esconder_saldo2.png" alt="">
             </div>
         </div>
@@ -206,7 +195,7 @@
 
 
         <div id="containerInput">
-            <label>Valor a pagar</label>
+            <label class="letraPequena">Valor a pagar</label>
             <div>
                 <label id="rs" for="preco">R$</label>
                 <input type="number" name="preco" id="preco" placeholder="260,00">
@@ -238,14 +227,14 @@
 
         <div style="display: flex; align-items: center;">
             <img src="img/btn_radioOn.png" alt="">
-            <p>Hoje</p>
+            <p class="letraPequena">Hoje</p>
         </div>
 
         <hr style="margin: 10px 0px; color: #444444; border: 1px solid #e7e7f1;">
 
         <div style="display: flex; align-items: center;">
             <img src="img/btn_radioOff.png" alt="">
-            <p>Agendar</p>
+            <p class="letraPequena">Agendar</p>
         </div>
 
         <p class="letraGrande">Forma de Pagamento</p>
