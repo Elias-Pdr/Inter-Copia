@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrato</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            min-width: 720px;
+            width: 100vw;
+        }
+        main, header{
+            margin: 30px auto;
+            width: 90%;
+        }
+
+
+        .letraPequena{
+            color: #616161;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .letraGrande{
+            font-family: 'Baloo 2', monospace;
+            color: #252525;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .containerBtns{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0px;
+        }
+
+        #btns div{
+            width: fit-content;
+            text-align: center;
+        }
+        #btns img{
+            border-radius: 100px;
+        }
+
+        .saldoDisponivel{
+            border: 1px solid #cecfd6;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .ContainerFiltro{
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0px;
+        }
+        .ContainerFiltro div{
+            border: 1px solid #cecfd6;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            padding: 0px 20px;
+        }
+        .ContainerFiltro img{
+            border-radius: 16px;
+        }
+        .ContainerFiltro p{
+            margin-right: 10px;
+        }
+        .ContainerFiltro button{
+            background: none;
+            border: none;
+            color: #ff7a00;
+            font-weight: 900;
+            font-size: 14px;
+            margin: 0px 10px;
+        }
+        .data{
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0px;
+            border-bottom: 1px solid #cecfd6;
+        }
+        .historico{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0px 30px 0px;
+        }
+        .historico p{
+            margin: 3px 0px;
+        }
+        .historico > div{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <div style="display: flex; margin: 20px 0px;" onclick="window.location.href = 'tela-chavePix2.html'">
+            <img style="border-radius: 50px;" src="img/btn_voltar2.png" >
+            <div style="display: flex; align-items: center; justify-content: center; width: 100%; margin-left: -70px;">
+                <p><strong style="font-size: 30px;">Revisão</strong></p>
+            </div>
+        </div>
+
+        <div class="containerBtns">
+            <div id="btns">
+                <div>
+                    <img src="img/extrato/1.png" alt="">
+                    <p><strong>Pagar</strong></p>
+                </div>
+            </div>
+            <div id="btns">
+                <div>
+                    <img src="img/extrato/2.png" alt="">
+                    <p><strong>Receber</strong></p>
+                </div>
+            </div>
+            <div id="btns">
+                <div>
+                    <img src="img/extrato/3.png" alt="">
+                    <p><strong>Investir</strong></p>
+                </div>
+            </div>
+            <div id="btns">
+                <div>
+                    <img src="img/extrato/4.png" alt="">
+                    <p><strong>Comprar</strong></p>
+                </div>
+            </div>
+            <div id="btns">
+                <div>
+                    <img src="img/extrato/5.png" alt="">
+                    <p><strong>Recarga</strong></p>
+                </div>
+            </div>
+            <div id="btns">
+                <div>
+                    <img src="img/extrato/6.png" alt="">
+                    <p><strong>Empréstimos</strong></p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="saldoDisponivel">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <strong style="font-size: 16px;">Saldo disponível</strong>
+                </div>
+                <img src="img/bnt_esconder_saldo.png" alt="">
+            </div>
+            <p class="letraPequena">Total em conta</p>
+            <p class="letraGrande">R$90,34</p>
+        </div>
+
+        <div class="ContainerFiltro">
+            <div>
+                <img src="img/extrato/filtro1.png" alt="">
+            </div>
+            <div>
+                <p>Datas</p>
+                <img src="img/extrato/filtro2.png" alt="">
+            </div>
+            <div>
+                <p>Tipos</p>
+                <img src="img/extrato/filtro2.png" alt="">
+            </div>
+            <div>
+                <p>Lançamentos</p>
+                <img src="img/extrato/filtro2.png" alt="">
+            </div>
+            <button>
+                Limpar
+            </button>
+        </div>
+
+        <p><strong>Junho</strong></p>
+        <br>
+        <div>
+            <div class="data">
+                <p>Hoje</p>
+                <p>Saldo do dia <strong>R$ 94,45</strong></p>
+            </div>
+            <div class="historico">
+                <div>
+                    <img style="margin-right: 20px;" src="img/extrato/pix.png" alt="">
+                    <div>
+                        <p><strong>Pix recebido</strong></p>
+                        <p style="color: #00ab4f;"><strong>R$ 2,35</strong></p>
+                        <p>Ana Andréia Silva Souza</p>
+                    </div>
+                </div>
+                <img style="margin: 10px 0px;" src="img/btn_setaRigth.png" alt="">
+            </div>
+        </div>
+
+        <div>
+            <div class="data">
+                <p>Hoje</p>
+                <p>Saldo do dia <strong>R$ 94,45</strong></p>
+            </div>
+            <div class="historico">
+                <div>
+                    <img style="margin-right: 20px;" src="img/extrato/pix.png" alt="">
+                    <div>
+                        <p><strong>Pix recebido</strong></p>
+                        <p style="color: #00ab4f;"><strong>R$ 2,35</strong></p>
+                        <p>Ana Andréia Silva Souza</p>
+                    </div>
+                </div>
+                <img style="margin: 10px 0px;" src="img/btn_setaRigth.png" alt="">
+            </div>
+        </div>
+
+        <div>
+            <div class="data">
+                <p>Hoje</p>
+                <p>Saldo do dia <strong>R$ 94,45</strong></p>
+            </div>
+            <div class="historico">
+                <div>
+                    <img style="margin-right: 20px;" src="img/extrato/pix.png" alt="">
+                    <div>
+                        <p><strong>Pix recebido</strong></p>
+                        <p style="color: #00ab4f;"><strong>R$ 2,35</strong></p>
+                        <p>Ana Andréia Silva Souza</p>
+                    </div>
+                </div>
+                <img style="margin: 10px 0px;" src="img/btn_setaRigth.png" alt="">
+            </div>
+
+            <div class="historico">
+                <div>
+                    <img style="margin-right: 20px;" src="img/extrato/pix.png" alt="">
+                    <div>
+                        <p><strong>Pix recebido</strong></p>
+                        <p style="color: #00ab4f;"><strong>R$ 2,35</strong></p>
+                        <p>Ana Andréia Silva Souza</p>
+                    </div>
+                </div>
+                <img style="margin: 10px 0px;" src="img/btn_setaRigth.png" alt="">
+            </div>
+
+            <div class="historico">
+                <div>
+                    <img style="margin-right: 20px;" src="img/extrato/pix.png" alt="">
+                    <div>
+                        <p><strong>Pix recebido</strong></p>
+                        <p style="color: #00ab4f;"><strong>R$ 2,35</strong></p>
+                        <p>Ana Andréia Silva Souza</p>
+                    </div>
+                </div>
+                <img style="margin: 10px 0px;" src="img/btn_setaRigth.png" alt="">
+            </div>
+        </div>
+
+
+    </main>
+</body>
+</html>
