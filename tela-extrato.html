@@ -111,10 +111,10 @@
 <body>
 
     <header>
-        <div style="display: flex; margin: 20px 0px;" onclick="window.location.href = 'tela-chavePix2.html'">
+        <div style="display: flex; margin: 20px 0px;" onclick="window.location.href = 'index.html'">
             <img style="border-radius: 50px;" src="img/btn_voltar2.png" >
             <div style="display: flex; align-items: center; justify-content: center; width: 100%; margin-left: -70px;">
-                <p><strong style="font-size: 30px;">Revisão</strong></p>
+                <p><strong style="font-size: 30px;">Extrato</strong></p>
             </div>
         </div>
 
@@ -167,7 +167,7 @@
                 <img src="img/bnt_esconder_saldo.png" alt="">
             </div>
             <p class="letraPequena">Total em conta</p>
-            <p class="letraGrande">R$90,34</p>
+            <p id="saldo" class="letraGrande">R$90,34</p>
         </div>
 
         <div class="ContainerFiltro">
@@ -191,19 +191,19 @@
             </button>
         </div>
 
-        <p style="margin-top: 60px; font-size: 18px;"><strong>Junho</strong></p>
+        <p style="margin-top: 60px; font-size: 18px;"><strong id="mes">---</strong></p>
         <br>
         <div>
             <div class="data">
                 <p>Hoje</p>
-                <p>Saldo do dia <strong>R$ 94,45</strong></p>
+                <p>Saldo do dia <strong id="saldo">R$ --</strong></p>
             </div>
             <div class="historico">
                 <div>
                     <img style="margin-right: 20px;" src="img/extrato/pix.png" alt="">
                     <div>
                         <p><strong>Pix recebido</strong></p>
-                        <p style="color: #00ab4f;"><strong>R$ 2,35</strong></p>
+                        <p style="color: #00ab4f;"><strong>R$ <span id="preco">2,35</span></strong></p>
                         <p>Ana Andréia Silva Souza</p>
                     </div>
                 </div>
@@ -213,8 +213,8 @@
 
         <div>
             <div class="data">
-                <p>Hoje</p>
-                <p>Saldo do dia <strong>R$ 94,45</strong></p>
+                <p>Quarta-feira, 20 de Julho</p>
+                <p>Saldo do dia <strong>R$ 94,97</strong></p>
             </div>
             <div class="historico">
                 <div>
@@ -231,8 +231,8 @@
 
         <div>
             <div class="data">
-                <p>Hoje</p>
-                <p>Saldo do dia <strong>R$ 94,45</strong></p>
+                <p>Segunda-feira, 18 de Julho</p>
+                <p>Saldo do dia <strong>R$ 90,21</strong></p>
             </div>
             <div class="historico">
                 <div>
@@ -273,5 +273,8 @@
 
 
     </main>
+
+    <script src="InfosVendedorComprador.js"></script>
+
 </body>
 </html>

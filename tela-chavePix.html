@@ -82,6 +82,7 @@
             background-color: #ff7a01;
         }
     </style>
+
 </head>
 <body>
     <div>
@@ -98,28 +99,28 @@
                 <div><p style="display: flex; align-items: center; font-size: 18px; "><strong>Escolhao tipo de chave  </strong><span><img style="margin: 8px;" src="img/btn_ajuda.png" alt=""></span></p></div>    
                 <p style="font-weight: 400;">Informe a chave de quem irá receber</p>
             </div>
-            <button onclick="radio('radio1'), visible('cpf')">
+            <button onclick="radio('radio1'), visible('cpf'), localStorage.setItem('tipoDeChave', 'Chave CPF/CNPJ')">
                 <div>
                     <p>CPF/CNPJ</p>
                     <img id="radio1" style="margin-right: 20px;" src="img/btn_radioOff.png" alt="">
                 </div>
                 <input type="text" name="cpf" id="cpf" placeholder="CPF/CNPJ de quem irá receber">
             </button>
-            <button onclick="radio('radio2'), visible('celular')">
+            <button onclick="radio('radio2'), visible('celular'), localStorage.setItem('tipoDeChave', 'Chave de Celular')">
                 <div>
                     <p>Celular</p>
                     <img id="radio2" style="margin-right: 20px;" src="img/btn_radioOff.png" alt="">
                 </div>
                 <input type="text" name="celular" id="celular" placeholder="Celular de quem irá receber">
             </button>
-            <button onclick="radio('radio3'), visible('email')">
+            <button onclick="radio('radio3'), visible('email'), localStorage.setItem('tipoDeChave', 'Chave de E-mail')">
                 <div>
                     <p>E-mail</p>
                     <img id="radio3" style="margin-right: 20px;" src="img/btn_radioOff.png" alt="">
                 </div>
                 <input type="text" name="email" id="email" placeholder="E-mail de quem irá receber">
             </button>
-            <button onclick="radio('radio4'), visible('aleatoria')">
+            <button onclick="radio('radio4'), visible('aleatoria'), localStorage.setItem('tipoDeChave', 'Chave Aleatória')">
                 <div>
                     <p>Aleatória</p>
                     <img id="radio4" style="margin-right: 20px;" src="img/btn_radioOff.png" alt="">
@@ -130,13 +131,17 @@
     </div>
 
     <footer>
-        <button onclick="window.location.href = 'tela-chavePix2.html'">
+        <button onclick="continuar()">
             <strong>CONTINUAR</strong>
         </button>
     </footer>
 
+    <script src="InfosVendedorComprador.js"></script>
+
     <script>
         function radio(id) {
+            console.log(document.getElementById('cpf').value);
+
             document.getElementById('radio1').src = "img/btn_radioOff.png"
             document.getElementById('radio2').src = "img/btn_radioOff.png"
             document.getElementById('radio3').src = "img/btn_radioOff.png"
@@ -154,6 +159,35 @@
             document.getElementById(id).style.display = 'block'
         }
     
+        function continuar() {
+            let cpfCnpj = document.getElementById('cpf').value
+            console.log(cpfCnpj.length);
+
+
+            if(localStorage.getItem('tipoDeChave') == 'Chave CPF/CNPJ'){ 
+                localStorage.setItem('chave', document.getElementById('cpf').value)
+
+                if (cpfCnpj.length > 15) {
+                    localStorage.setItem('tipoDeChave', 'Chave CNPJ')
+                }else{
+                    localStorage.setItem('tipoDeChave', 'Chave CPF')
+                }
+            }
+            if(localStorage.getItem('tipoDeChave') == 'Chave de Celular'){ 
+                localStorage.setItem('chave', document.getElementById('celular').value)
+            }
+            if(localStorage.getItem('tipoDeChave') == 'Chave de E-mail'){ 
+                localStorage.setItem('chave', document.getElementById('email').value)
+            }
+            if(localStorage.getItem('tipoDeChave') == 'Chave Aleatória'){ 
+                localStorage.setItem('chave', document.getElementById('aleatoria').value)
+            }
+
+            console.log(localStorage.getItem('chave'));
+
+            window.location.href = 'tela-chavePix2.html'
+
+        }
     </script>
 
 </body>

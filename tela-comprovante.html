@@ -34,7 +34,7 @@
             margin: 0px auto 30px auto;
         }
 
-        header div{
+        header > div{
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -100,6 +100,7 @@
 
     </style>
 
+
 </head>
 <body>
 
@@ -109,7 +110,7 @@
         <div>
             <img src="img/recibo.png" alt="">
             <p class="letraGrande" style="margin: 0px; color: #616161;">Pix Realizado</p>
-            <p class="letraGrande rs" style="margin: 0px; color: #616161;">R$ 250,00</p>
+            <p class="letraGrande rs" style="margin: 0px; color: #616161;">R$ <span id="preco" class="letraGrande rs" style="margin: 0px; color: #616161;" >250,00</span></p>
         </div>
     </header>
 
@@ -130,8 +131,8 @@
                 </span>
             </span>
             
-            <p class="letraPequena">Descrição</p>
-            <p class="letraGrande">Isso não é um golpe</p>
+            <p id="descriçãoLable" class="letraPequena">Descrição</p>
+            <p id="descrição" class="letraGrande">Isso não é um golpe</p>
         
 
 
@@ -145,8 +146,8 @@
             <p class="letraPequena">Nome</p>
             <p class="letraGrande">Ana Travor salva</p>
 
-            <p class="letraPequena">CPF/CNPJ</p>
-            <p class="letraGrande">**.876.867-**</p>
+            <p id="cpfCnpjLable" class="letraPequena">CPF/CNPJ</p>
+            <p id="cpfCnpj" class="letraGrande">**.876.867-**</p>
 
             <p class="letraPequena">Instituição</p>
             <p class="letraGrande">Picpay</p>
@@ -171,14 +172,16 @@
     </main>
 
     <footer>
-        <button onclick="document.getElementById('containeriSafe').style.display = 'flex'">
+        <button>
             <strong>COMPARTILHAR</strong>
         </button>
 
-        <button id="home" onclick="document.getElementById('containeriSafe').style.display = 'flex'">
+        <button id="home" onclick="window.location.href = 'index.html'">
             <strong>HOME DO PIX</strong>
         </button>
     </footer>
+
+    <script src="InfosVendedorComprador.js"></script>
 
 </body>
 </html>

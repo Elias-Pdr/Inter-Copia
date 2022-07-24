@@ -114,15 +114,15 @@
  
 
 
-        #descicaoContainer{
+        #descricaoContainer{
             margin: 20px 0px;            
         }
 
-        #descicaoContainer p{
+        #descricaoContainer p{
             color: #ff8700;
             margin-top: 30px;
         }
-        #descicaoContainer input{
+        #descricaoContainer input{
             width: 100%;
             margin: 6px 0px;
             border: none;
@@ -158,6 +158,7 @@
         }
 
     </style>
+
 </head>
 <body>
     <header>
@@ -187,18 +188,28 @@
             </div>
         </div>
 
-        <div id="descicaoContainer">
+        <div id="descricaoContainer">
             <p><strong>Descrição (opcional)</strong></p>
-            <input type="text" name="descicao" id="descicao" placeholder="Pagamento">
+            <input type="text" name="descricao" id="descricao" placeholder="Pagamento">
         </div>
 
     </main>
 
     <footer>
-        <button onclick="window.location.href = 'tela-revisao.html'">
+        <button onclick="chavePix2Continuar('preco', 'descricao')">
             <strong>CONTINUAR</strong>
         </button>
     </footer>
 
+
+    <script src="InfosVendedorComprador.js"></script>
+
+    <script>
+        function chavePix2Continuar(IDpreco_input,IDdescrição_input) {
+            localStorage.setItem('preco', document.getElementById(IDpreco_input).value)
+            localStorage.setItem('descrição', document.getElementById(IDdescrição_input).value)
+            window.location.href = 'tela-revisao.html'
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admiro</title>
+    <style>
+        .saldoDisponivel{
+            border: 1px solid #cecfd6;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .letraPequena{
+            color: #616161;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .letraGrande{
+            font-family: 'Baloo 2', monospace;
+            color: #252525;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; margin: 20px 0px;" onclick="window.location.href = 'index.html'">
+            <img style="border-radius: 50px;" src="img/btn_voltar2.png" >
+            <div style="display: flex; align-items: center; justify-content: center; width: 100%; margin-left: -70px;">
+                <p><strong style="font-size: 30px;">ADM</strong></p>
+            </div>
+        </div>
+
+
+        <div class="saldoDisponivel">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <strong style="font-size: 16px;">Saldo disponível</strong>
+                </div>
+                <img src="img/bnt_esconder_saldo.png" alt="">
+            </div>
+            <p class="letraPequena">Total em conta</p>
+            <p id="saldo" class="letraGrande">R$90,34</p>
+        </div>
+
+        
+    </header>
+</body>
+</html>
