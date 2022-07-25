@@ -79,7 +79,7 @@
             border: none;
             color: white;
             font-size: 16px;
-            background-color: #ff7a01;
+            background-color: gray;
         }
     </style>
 
@@ -104,7 +104,7 @@
                     <p>CPF/CNPJ</p>
                     <img id="radio1" style="margin-right: 20px;" src="img/btn_radioOff.png" alt="">
                 </div>
-                <input type="text" name="cpf" id="cpf" placeholder="CPF/CNPJ de quem irá receber">
+                <input type="tel" name="cpf" id="cpf" placeholder="CPF/CNPJ de quem irá receber">
             </button>
             <button onclick="radio('radio2'), visible('celular'), localStorage.setItem('tipoDeChave', 'Chave de Celular')">
                 <div>
@@ -131,7 +131,7 @@
     </div>
 
     <footer>
-        <button onclick="continuar()">
+        <button id="continuar" onclick="continuar()">
             <strong>CONTINUAR</strong>
         </button>
     </footer>
@@ -139,9 +139,9 @@
     <script src="InfosVendedorComprador.js"></script>
 
     <script>
-        function radio(id) {
-            console.log(document.getElementById('cpf').value);
 
+
+        function radio(id) {
             document.getElementById('radio1').src = "img/btn_radioOff.png"
             document.getElementById('radio2').src = "img/btn_radioOff.png"
             document.getElementById('radio3').src = "img/btn_radioOff.png"
@@ -161,8 +161,6 @@
     
         function continuar() {
             let cpfCnpj = document.getElementById('cpf').value
-            console.log(cpfCnpj.length);
-
 
             if(localStorage.getItem('tipoDeChave') == 'Chave CPF/CNPJ'){ 
                 localStorage.setItem('chave', document.getElementById('cpf').value)
@@ -183,11 +181,80 @@
                 localStorage.setItem('chave', document.getElementById('aleatoria').value)
             }
 
-            console.log(localStorage.getItem('chave'));
 
             window.location.href = 'tela-chavePix2.html'
 
         }
+    
+        let inputCpf = document.getElementById('cpf')
+        document.getElementById('continuar').disabled = true; 
+
+
+        document.getElementById('cpf').addEventListener('keypress', () => {
+            document.getElementById('continuar').style.backgroundColor = '#ff7a01'
+            document.getElementById('continuar').disabled = false; 
+
+        })
+
+        document.getElementById('celular').addEventListener('keypress', () => {
+            document.getElementById('continuar').style.backgroundColor = '#ff7a01'
+            document.getElementById('continuar').disabled = false; 
+
+        })
+
+
+        document.getElementById('email').addEventListener('keypress', () => {
+            document.getElementById('continuar').style.backgroundColor = '#ff7a01'
+            document.getElementById('continuar').disabled = false; 
+
+        })
+        
+
+        document.getElementById('aleatoria').addEventListener('keypress', () => {
+            document.getElementById('continuar').style.backgroundColor = '#ff7a01'
+            document.getElementById('continuar').disabled = false; 
+
+        })
+
+
+
+
+
+
+        inputCpf.addEventListener('keypress', () => {
+            let inputLength = inputCpf.value.length
+
+
+            if(inputLength === 3){
+                inputCpf.value += "."
+            }
+
+            else if(inputLength === 7){
+                inputCpf.value += "."
+            }
+
+            else if (inputLength === 11) {
+                inputCpf.value += '-'
+            }
+
+            else if(inputLength === 15){
+                chave_escolhida = 'cnpj'
+                inputCpf.value = inputCpf.value.replace('.','')
+                inputCpf.value = inputCpf.value.replace('.','')
+                inputCpf.value = inputCpf.value.replace('-','')
+
+                console.log(inputCpf.value);
+                inputCpf.value += '-'
+
+                inputCpf.value = inputCpf.value.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})/, "$1.$2.$3/$4")
+                //12.345.678/0001-01
+                //123456780001
+
+
+            }
+
+            })
+            
     </script>
 
 </body>

@@ -166,7 +166,7 @@
         <div class="shadow"></div>
         <div class="iSafe">
             <p class="letraPequena">Clique em confirmar para autenticar sua transição pelo iSafe</p>
-            <button onclick="window.location.href = 'tela-comprovante.html'">
+            <button onclick="confirmar()">
                 <strong>CONFIRMAR</strong>
             </button>
         </div>
@@ -200,7 +200,7 @@
             <label class="letraPequena">Valor a pagar</label>
             <div style="display: flex; align-items: center;">
                 <label id="rs" for="preco">R$</label>
-                <p id="preco">260,00</p>
+                <p id="preco">---</p>
             </div>
         </div>
 
@@ -210,16 +210,16 @@
             <p id="chave" class="letraGrande">---</p>
 
             <p class="letraPequena">Nome</p>
-            <p class="letraGrande">Ana Travor salva</p>
+            <p id="nome" class="letraGrande">---</p>
 
             <p id="cpfCnpjLable" class="letraPequena">CPF/CNPJ</p>
-            <p id="cpfCnpj" class="letraGrande">**.876.867-**</p>
+            <p id="cpfCnpj" class="letraGrande">---</p>
 
             <p class="letraPequena">Instituição</p>
-            <p class="letraGrande">Picpay</p>
+            <p id="instituicao" class="letraGrande">---</p>
 
             <p id="descriçãoLable" class="letraPequena">Descrição</p>
-            <p id="descrição" class="letraGrande">Isso não é um golpe</p>
+            <p id="descrição" class="letraGrande">---</p>
 
             
             <p class="letraGrande" style="margin-bottom: 8px;">Pra quando?</p>
@@ -265,6 +265,18 @@
     </footer>
     
     <script src="InfosVendedorComprador.js"></script>
+
+    <script>
+        function confirmar(){
+            let preco = localStorage.getItem('preco').replace(',', '.').replace('R$ ', '')
+            let saldo = localStorage.getItem('saldo').replace(',', '.').replace('R$ ', '')
+            let res = saldo - preco
+
+            localStorage.setItem('saldo', ('R$ ' + res.toFixed(2).replace('.', ',')))
+            console.log("Preço: " + preco + ', ' + "Saldo: " + saldo + ', ' + "res: " + ('R$ ' + res.toFixed(2).replace('.', ',')));
+            window.location.href = 'tela-comprovante.html'
+        }
+    </script>
 
 </body>
 </html>

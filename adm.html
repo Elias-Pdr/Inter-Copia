@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admiro</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            min-width: 720px;
+            width: 100vw;
+        }
+        main, header{
+            margin: 30px auto;
+            width: 90%;
+        }
+
         .saldoDisponivel{
             border: 1px solid #cecfd6;
             border-radius: 10px;
@@ -23,6 +39,56 @@
             font-size: 30px;
             font-weight: bold;
         }
+        .container_input{
+            width: 100%;
+            height: 50px;
+            padding: 5px 10px;
+            background-color: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.199);
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .container_input label{
+            width: 100%;
+            height: 30%;
+            font-size: 12px;
+            color: #737373;
+            background-color: transparent;
+            display: none;
+        }
+        .container_input input{
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            outline: none;
+        }
+
+        header input{
+            border: none;
+            outline: none;
+        }
+
+        
+        footer {
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 20px;
+
+        }
+        footer button{
+            bottom: 20px;
+            text-align: center;
+            padding: 20px 0px;
+            width: 90%;
+            border-radius: 8px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            background-color: #ff7a01;
+        }
+
     </style>
 </head>
 <body>
@@ -43,10 +109,104 @@
                 <img src="img/bnt_esconder_saldo.png" alt="">
             </div>
             <p class="letraPequena">Total em conta</p>
-            <p id="saldo" class="letraGrande">R$90,34</p>
+            <input type="text" id="saldo" class="letraGrande">
         </div>
 
         
     </header>
+
+    <main>
+        <div class="container_input" id="container_input_meuNome" onclick="contoller_input('input_meuNome', 'label_meuNome', 'container_input_meuNome')">
+            <label id="label_meuNome" for="meuNome">Meu nome completo*</label>
+            <input class="input_style" type="text" id="input_meuNome" value="Pedro Elias " placeholder="Meu nome completo*">
+        </div>
+
+        <div class="container_input" id="container_input_meuCpf" onclick="contoller_input('input_meuCpf', 'label_meuCpf', 'container_input_meuCpf')">
+            <label id="label_meuCpf" for="meuCpf">Meu CPF*</label>
+            <input class="input_style" type="text" id="input_meuCpf" placeholder="Meu CPF*">
+        </div>
+
+        <div style="margin-right: 10px;" class="container_input" id="container_input_nome" onclick="contoller_input('input_nome', 'label_nome', 'container_input_nome')">
+            <label id="label_nome" for="nome">Nome da vitima*</label>
+            <input class="input_style" type="text" id="input_nome" placeholder="Nome da vitima*">
+        </div>
+
+        <div style="margin-right: 10px;" class="container_input" id="container_input_banco" onclick="contoller_input('input_banco', 'label_banco', 'container_input_banco')">
+            <label id="label_banco" for="banco">Banco do idiota*</label>
+            <input class="input_style" type="text" id="input_banco" placeholder="Banco do idiota*">
+        </div>
+
+        <div style="margin-right: 10px;" class="container_input" id="container_input_cpf" onclick="contoller_input('input_cpf', 'label_cpf', 'container_input_cpf')">
+            <label id="label_cpf" for="cpf">CPF/CNPJ do trouxa*</label>
+            <input class="input_style" type="text" id="input_cpf" placeholder="CPF/CNPJ do trouxa*">
+        </div>
+
+    </main>
+
+
+    <footer>
+        <button onclick="gravar()">
+            <strong>GRAVAR</strong>
+        </button>
+    </footer>
+
+
+    <script>
+
+            document.getElementById('input_meuNome').value = localStorage.getItem('myName')
+            document.getElementById('input_meuCpf').value = localStorage.getItem('myCpf')
+            document.getElementById('input_nome').value = localStorage.getItem('nameTx')
+            document.getElementById('input_banco').value = localStorage.getItem('bancoTx')
+            document.getElementById('input_cpf').value = localStorage.getItem('cpfTx')
+            document.getElementById('saldo').value = localStorage.getItem('saldo')
+
+
+        function contoller_input(id_input, id_label, id_container){
+            const allContainer = document.querySelectorAll('.container_input')
+
+            document.getElementById(id_container).style.backgroundColor = 'transparent'
+
+            for (let i = 0; i < allContainer.length; i++) {
+                const containers = allContainer[i];
+                containers.style.border = '1px solid rgba(0, 0, 0, 0.199)'
+            }
+
+            const label = document.getElementById(id_label)
+            const input = document.getElementById(id_input)
+            const container = document.getElementById(id_container)
+
+            label.style.display = 'block'
+            input.style.height = '70%'
+            input.placeholder = ' '
+            container.style.border = '1px solid red'
+        }
+        function gravar() {
+            let myName = document.getElementById('input_meuNome').value
+            let myCpf = document.getElementById('input_meuCpf').value
+            let nameTx = document.getElementById('input_nome').value
+            let bancoTx = document.getElementById('input_banco').value
+            let cpfTx = document.getElementById('input_cpf').value
+            let saldo = document.getElementById('saldo').value
+
+
+            localStorage.setItem('myName', myName)
+            localStorage.setItem('myCpf', "***."+myCpf+"-**")
+            localStorage.setItem('nameTx', nameTx)
+            localStorage.setItem('bancoTx', bancoTx)
+            localStorage.setItem('saldo', saldo)
+
+            if(cpfTx.length > 15){
+                localStorage.setItem('cpfTx', cpfTx)
+            }else{
+                localStorage.setItem('cpfTx', "***."+cpfTx+"-**")
+            }
+
+            console.log(localStorage.getItem('cpfTx'));
+            window.location.href = 'index.html'
+
+        }
+        
+
+    </script>
 </body>
 </html>

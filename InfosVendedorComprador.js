@@ -1,7 +1,7 @@
 let saldo = document.querySelectorAll('#saldo')
 if(saldo.length > 0){
     for (let i = 0; i < saldo.length; i++) {
-        saldo[i].innerHTML = 'R$ 0,01'
+        saldo[i].innerHTML = localStorage.getItem('saldo')
     }
 }else{
     console.log('Não tem saldo aqui');
@@ -46,7 +46,7 @@ let cpfCnpj = document.querySelectorAll('#cpfCnpj')
 
 if(cpfCnpj.length > 0){
 
-    cpfCnpj[0].innerHTML = '***.' + localStorage.getItem('cpf') + '-**'
+    cpfCnpj[0].innerHTML = localStorage.getItem('cpfTx')
 
 }
 
@@ -101,3 +101,35 @@ if(mês.length > 0){
 }
 
 
+let instituicao = document.querySelectorAll('#instituicao')
+
+if(instituicao.length > 0){
+
+    instituicao[0].innerHTML = localStorage.getItem('bancoTx')
+
+}
+
+
+let nome = document.querySelectorAll('#nome')
+
+if(nome.length > 0){
+
+    nome[0].innerHTML = localStorage.getItem('nameTx')
+
+}
+
+let myNome = document.querySelectorAll('#myNome')
+
+if(myNome.length > 0){
+
+    myNome[0].innerHTML = localStorage.getItem('myName')
+
+}
+
+let myCpf = document.querySelectorAll('#myCpf')
+
+if(myCpf.length > 0){
+
+    myCpf[0].innerHTML = localStorage.getItem('myCpf')
+
+}

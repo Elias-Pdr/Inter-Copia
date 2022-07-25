@@ -154,7 +154,7 @@
             border: none;
             color: white;
             font-size: 16px;
-            background-color: #ff7a01;
+            background-color: gray;            
         }
 
     </style>
@@ -196,7 +196,7 @@
     </main>
 
     <footer>
-        <button onclick="chavePix2Continuar('preco', 'descricao')">
+        <button id="continuar" onclick="chavePix2Continuar('preco', 'descricao')">
             <strong>CONTINUAR</strong>
         </button>
     </footer>
@@ -205,11 +205,22 @@
     <script src="InfosVendedorComprador.js"></script>
 
     <script>
+
+        document.getElementById('continuar').disabled = true; 
+
         function chavePix2Continuar(IDpreco_input,IDdescrição_input) {
             localStorage.setItem('preco', document.getElementById(IDpreco_input).value)
             localStorage.setItem('descrição', document.getElementById(IDdescrição_input).value)
             window.location.href = 'tela-revisao.html'
         }
+
+
+        document.getElementById('preco').addEventListener('keypress', () => {
+            document.getElementById('continuar').style.backgroundColor = '#ff7a01'
+            document.getElementById('continuar').disabled = false; 
+        })
+
+
     </script>
 </body>
 </html>
